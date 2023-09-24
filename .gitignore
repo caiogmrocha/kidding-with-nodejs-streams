@@ -1,4 +1,4 @@
 node_modules
 
-resources
-!resources/.gitkeep
+resources/datasource.csv
+resources/report.json
