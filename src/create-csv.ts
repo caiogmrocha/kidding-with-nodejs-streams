@@ -6,7 +6,7 @@ const dataSourceWriteStream = fs.createWriteStream(path.resolve(__dirname, 'reso
 
 console.time('create-csv');
 
-const totalRegistros = 10000000;
+const totalRegistros = 100000000;
 const fatorPercentualUnitario = totalRegistros / 100;
 let registrosEscritos = 0;
 

@@ -15,7 +15,19 @@ const rl = readline.createInterface({
 	terminal: false,
 });
 
+const totalRegistros = 100000000;
+const fatorPercentualUnitario = totalRegistros / 100;
+let registrosLidos = 0;
+
 rl.on('line', (line) => {
+	registrosLidos++;
+
+	if (registrosLidos % fatorPercentualUnitario === 0) {
+		const percentual = (registrosLidos / totalRegistros) * 100;
+		console.clear();
+		console.log(`Leitura e processamento da base de dados: ${percentual.toFixed(0)}%`);
+	}
+
 	const [plate, traveled_kilometers] = line.split(',');
 
 	reportData[plate] = BigInt(traveled_kilometers) + (reportData[plate] || 0n);
